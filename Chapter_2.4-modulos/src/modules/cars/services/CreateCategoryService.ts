@@ -10,11 +10,13 @@ interface IRequest {
 // [x] - Acessar o repositório
 
 class CreateCategoryService {
-  private categoriesRepository: ICategoriesRepository;
+  //   private categoriesRepository: ICategoriesRepository;
 
-  constructor(categoriesRepository: ICategoriesRepository) {
-    this.categoriesRepository = categoriesRepository;
-  }
+  //   constructor(categoriesRepository: ICategoriesRepository) {
+  //     this.categoriesRepository = categoriesRepository;
+  //   }
+
+  constructor(private categoriesRepository: ICategoriesRepository) {}
   execute({ name, description }: IRequest): void {
     const categoryAlreadyExists = this.categoriesRepository.findByName(name);
     if (categoryAlreadyExists) {
